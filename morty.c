@@ -38,7 +38,8 @@ int main(int argc, char *argv[]){
 
     LPCSTR baseStr = argv[1];
 
-    printf("[*] Obfuscating base string... \n");
+    printf("[*] Base str : %s \n", baseStr);
+    printf("[*] Obfuscating base string : %s... \n", baseStr);
     unsigned char* hex_ascii_xor = string_to_ascii(baseStr, xor_input_key, sizeof(xor_input_key));
 
     if(hex_ascii_xor == NULL){
@@ -54,7 +55,7 @@ int main(int argc, char *argv[]){
     LPSTR  clearStr = RecreateBaseString(hex_ascii_xor, len, xor_input_key, sizeof(xor_input_key));
 
     if(clearStr != NULL){
-        printf("[*] New string : %s \n", clearStr);
+        printf("[*] New string : %s \n\n\n", clearStr);
         free(clearStr);
     }
 
